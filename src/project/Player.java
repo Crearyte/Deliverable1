@@ -8,8 +8,7 @@ package project;
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  *
- * @author dancye
- * @author Paul Bonenfant Jan 2020
+ * @author Terrel creary
  */
 public abstract class Player {
 
