@@ -20,11 +20,47 @@ public class CardGameTest {
      * Test of getNumberOfPlayers method, of class CardGame.
      */
     @Test
-    public void testGetNumberOfPlayers() {
-        System.out.println("getNumberOfPlayers");
+    public void testGetNumberOfPlayersBoundry() {
+        System.out.println("getNumberOfPlayersBoundry Testing default 2 Players");
         CardGame instance = new CardGame();
-        int expResult = 0;
-        int result = instance.getNumberOfPlayers();
+        boolean expResult = false;
+        boolean result = true;
+        
+        if (instance.getNumberOfPlayers() >= 2 && instance.getNumberOfPlayers()<=4){ //Number of Players should pass if the number is between 2-4
+        expResult = true;
+        }
+        assertEquals(expResult, result);
+
+    }
+      /**
+     * Test of getNumberOfPlayers method, of class CardGame.
+     */
+    @Test
+    public void testGetNumberOfPlayersGood() {
+        System.out.println("getNumberOfPlayers Good Testing 4 players");
+        CardGame instance = new CardGame();
+        boolean expResult = false;
+        boolean result = true;
+        instance.setNumberOfPlayers(4);
+        if (instance.getNumberOfPlayers() >= 2 && instance.getNumberOfPlayers()<=4){ //Number of Players should pass if the number is between 2-4
+        expResult = true;
+        }
+        assertEquals(expResult, result);
+
+    }
+      /**
+     * Test of getNumberOfPlayers method, of class CardGame.
+     */
+    @Test
+    public void testGetNumberOfPlayersBad() {
+        System.out.println("getNumberOfPlayers testing 1 Player");
+        CardGame instance = new CardGame();
+        boolean expResult = false;
+        boolean result = false;
+        instance.setNumberOfPlayers(1);
+        if (instance.getNumberOfPlayers() >= 2 && instance.getNumberOfPlayers()<=4){ //Number of Players should pass if the number is between 2-4
+        expResult = true;
+        }
         assertEquals(expResult, result);
 
     }
@@ -33,11 +69,80 @@ public class CardGameTest {
      * Test of getPlayers method, of class CardGame.
      */
     @Test
-    public void testGetPlayers() {
-        System.out.println("getPlayers");
+    public void testGetPlayersBoundry() {
         CardGame instance = new CardGame();
-        List<Player> expResult = null;
-        List<Player> result = instance.getPlayers();
+        
+        Player P1 = new Player(0);
+        P1.setPlayerId(1);
+        P1.setPlayerName("Player 1");
+        P1.setPoints(0);
+        P1.setResult("Winner");
+        instance.getPlayers().add(P1);
+       
+        System.out.println("getPlayers");
+        boolean expResult = false;
+        boolean result = true;
+        if (instance.getPlayers().size()== 1 ){
+            expResult = true;
+        }
+       
+        assertEquals(expResult, result);
+    }
+    /**
+     * Test of getPlayers method, of class CardGame.
+     */
+    @Test
+    public void testGetPlayersGood() {
+        CardGame instance = new CardGame();
+        
+        Player P1 = new Player(0);
+        Player P2 = new Player(0);
+        Player P3 = new Player(0);
+        Player P4 = new Player(0);
+        P1.setPlayerId(1);
+        P1.setPlayerName("Player 1");
+        P1.setPoints(0);
+        P1.setResult("Winner");
+        P2.setPlayerId(2);
+        P2.setPlayerName("Player 2");
+        P2.setPoints(0);
+        P2.setResult("Loser");
+        P1.setPlayerId(3);
+        P1.setPlayerName("Player 3");
+        P1.setPoints(0);
+        P1.setResult("Loser");
+        P2.setPlayerId(4);
+        P2.setPlayerName("Player 4");
+        P2.setPoints(0);
+        P2.setResult("Loser");
+        instance.getPlayers().add(P1);
+        instance.getPlayers().add(P2);
+        instance.getPlayers().add(P3);
+        instance.getPlayers().add(P4);
+       
+        System.out.println("getPlayers");
+        boolean expResult = false;
+        boolean result = true;
+        if (instance.getPlayers().size() >= 2 ){
+            expResult = true;
+        }
+       
+        assertEquals(expResult, result);
+    }
+    /**
+     * Test of getPlayers method, of class CardGame.
+     */
+    @Test
+    public void testGetPlayersBad() {
+        CardGame instance = new CardGame();
+        System.out.println("getPlayers");
+        boolean expResult = false;
+        boolean result = false;
+        
+        if (instance.getPlayers().size()>= 1 ){
+            expResult = true;
+        }
+       
         assertEquals(expResult, result);
     }
 
