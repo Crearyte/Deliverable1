@@ -151,10 +151,13 @@ public class CardGameTest {
      */
     @Test
     public void testDistributeCardsForPlayers() {
+        boolean expResult = false;
+        boolean result = true;
         System.out.println("distributeCardsForPlayers Passed");
         List<Player> plys = null;
         CardGame instance = new CardGame();
         instance.distributeCardsForPlayers(plys);
+        assertEquals(expResult, result);
     }
 
     /**
