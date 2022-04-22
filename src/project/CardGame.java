@@ -26,10 +26,15 @@ private List<Player> players = new ArrayList<Player>();
 
   private int   numberOfPlayers   = 2;
 
+    public void setNumberOfPlayers(int numberOfPlayers) {
+        this.numberOfPlayers = numberOfPlayers;
+    }
+
   public int getNumberOfPlayers()
   {
   return numberOfPlayers;
   }
+  
 
   public List<Player> getPlayers()
   {
