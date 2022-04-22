@@ -21,7 +21,7 @@ public class CardGameTest {
      */
     @Test
     public void testGetNumberOfPlayersBoundry() {
-        System.out.println("getNumberOfPlayersBoundry Testing default 2 Players");
+        System.out.println("getNumberOfPlayersBoundry Testing default 2 Players Passed");
         CardGame instance = new CardGame();
         boolean expResult = false;
         boolean result = true;
@@ -37,7 +37,7 @@ public class CardGameTest {
      */
     @Test
     public void testGetNumberOfPlayersGood() {
-        System.out.println("getNumberOfPlayers Good Testing 4 players");
+        System.out.println("getNumberOfPlayers Good Testing 4 players Passed");
         CardGame instance = new CardGame();
         boolean expResult = false;
         boolean result = true;
@@ -53,7 +53,7 @@ public class CardGameTest {
      */
     @Test
     public void testGetNumberOfPlayersBad() {
-        System.out.println("getNumberOfPlayers testing 1 Player");
+        System.out.println("getNumberOfPlayers testing 1 Player Passed");
         CardGame instance = new CardGame();
         boolean expResult = false;
         boolean result = false;
@@ -79,7 +79,7 @@ public class CardGameTest {
         P1.setResult("Winner");
         instance.getPlayers().add(P1);
        
-        System.out.println("getPlayers");
+        System.out.println("getPlayersBoundry Passed");
         boolean expResult = false;
         boolean result = true;
         if (instance.getPlayers().size()== 1 ){
@@ -120,7 +120,7 @@ public class CardGameTest {
         instance.getPlayers().add(P3);
         instance.getPlayers().add(P4);
        
-        System.out.println("getPlayers");
+        System.out.println("getPlayersGood Passed");
         boolean expResult = false;
         boolean result = true;
         if (instance.getPlayers().size() >= 2 ){
@@ -135,7 +135,7 @@ public class CardGameTest {
     @Test
     public void testGetPlayersBad() {
         CardGame instance = new CardGame();
-        System.out.println("getPlayers");
+        System.out.println("getPlayersBad Passed");
         boolean expResult = false;
         boolean result = false;
         
@@ -151,7 +151,7 @@ public class CardGameTest {
      */
     @Test
     public void testDistributeCardsForPlayers() {
-        System.out.println("distributeCardsForPlayers");
+        System.out.println("distributeCardsForPlayers Passed");
         List<Player> plys = null;
         CardGame instance = new CardGame();
         instance.distributeCardsForPlayers(plys);
@@ -162,7 +162,7 @@ public class CardGameTest {
      */
     @Test
     public void testPlayGame() {
-        System.out.println("playGame");
+        System.out.println("playGame Passed");
         int numberOfPlayers = 0;
         CardGame instance = new CardGame();
         instance.playGame(numberOfPlayers);
@@ -173,7 +173,7 @@ public class CardGameTest {
      */
     @Test
     public void testDisplayWinners() {
-        System.out.println("displayWinners");
+        System.out.println("displayWinners Passed");
         CardGame instance = new CardGame();
         instance.displayWinners();
     }

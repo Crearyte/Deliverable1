@@ -16,7 +16,7 @@ public class CardGame implements Game
 {
   private List<Card> cards;
 
-private List<Player> players = new ArrayList<Player>();
+  private List<Player> players = new ArrayList<Player>();
 
   private Map<Player, List<Card>> cardsPlayerMap   = new HashMap<Player, List<Card>>();
 
@@ -26,7 +26,7 @@ private List<Player> players = new ArrayList<Player>();
 
   private int   numberOfPlayers   = 2;
 
-    public void setNumberOfPlayers(int numberOfPlayers) {
+  public void setNumberOfPlayers(int numberOfPlayers) {
         this.numberOfPlayers = numberOfPlayers;
     }
 
